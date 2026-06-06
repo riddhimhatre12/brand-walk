@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cinzel", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --color-primary: #111111;
+  --color-secondary: #ffffff;
+  --color-accent: #d4b483;
+  --color-bg-light: #f8f8f8;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulseSlow 8s ease-in-out infinite;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+  }
+  @keyframes pulseSlow {
+    0%, 100% { opacity: 0.3; transform: scale(1) translate(0, 0); }
+    50% { opacity: 0.6; transform: scale(1.1) translate(3%, 3%); }
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4b483;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c29f6b;
+}
+
+/* Lenis Smooth Scroll CSS Resets */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis-stopped {
+  overflow: hidden;
+}
+.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Custom Luxury Gradients & Backgrounds */
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #111111 0%, #1c1a17 50%, #2a251f 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f3e5ab 0%, #d4b483 50%, #aa8c5c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-champagne-gold {
+  background: linear-gradient(135deg, #111111 0%, #d4b483 100%);
+}
+
+.border-gold {
+  border-color: rgba(212, 180, 131, 0.2);
+}
+
+.border-gold-hover:hover {
+  border-color: rgba(212, 180, 131, 0.6);
+}
+
+/* Luxury Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-dark {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 180, 131, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 180, 131, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+}
+
+.glass-card-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 180, 131, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(212, 180, 131, 0.1);
+}
+
+/* Particle and lighting details */
+.luxury-glow {
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Horizontal Scroll Gallery Container */
+.horizontal-scroll-container {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+/* Preloader styles */
+.preloader-word {
+  overflow: hidden;
+}
+
+.preloader-word span {
+  display: inline-block;
+  transform: translateY(100%);
+}
